@@ -7,7 +7,8 @@ who it's shared with, and how to have it deleted. "We" and "us" mean the develop
 "You" means anyone in a Discord server where the bot is installed, including server owners and staff.
 
 Obsolescence is self-hosted. It runs on its developer's own computer, not on a cloud service, and doesn't sell,
-rent or advertise with anything it collects.
+rent or advertise with anything it collects. Other people can run their own copy of the app; section 8 covers what
+that means.
 
 Questions or requests: **apex101legend@yahoo.com**
 
@@ -88,21 +89,27 @@ these cases:
 | **Your own AI provider** | The same, if you added your own key | You chose that provider |
 | **Ollama** | `/ask` questions when it's the fallback, and messages sent to the review queue | It normally runs on the same computer, so nothing leaves it |
 | **Healthchecks or a similar uptime service** | Only an "I'm still running" signal, if the developer sets one up. No user data | So the developer knows if the bot goes offline |
-| **GitHub** | No user data | Checking for updates and downloading a public list of scam domains |
+| **GitHub** | No user data. GitHub sees the IP address of the computer asking, as with any download | Checking for updates, repairing the app's own files, and downloading a public list of scam domains |
 
 We may also disclose data if the law requires it, or to protect people from serious harm.
 
 ## 5. How long it's kept
+
+Each server's staff choose how long most records are kept, one setting per kind of record: 30 days up to 5 years,
+or forever. Until they choose, records are kept until deleted. Records still in use are always kept: an active ban
+or timeout, a case under appeal, and open reports, review items and tickets.
 
 | Data | Kept for |
 |---|---|
 | Message text in memory | Until the bot restarts, or until it's pushed out by newer messages (last 5,000) |
 | Message text on disk | Off unless a server turns it on; then that server's setting, at most 30 days |
 | Strikes | 31 days |
-| Security events | The latest 500 per server |
+| Security events | The server's retention setting, and never more than the latest 500 |
 | Security snapshots | The latest 7 per server |
-| Moderation records: cases, notes, appeals, reports, review items and the mod log | Until server staff delete them, or until deleted on request (section 6) |
-| AI usage records and your own AI key | Until you remove your key, or until deleted on request |
+| Moderation records: cases, notes, appeals, reports, review items and the mod log | The server's retention setting for each (forever unless changed). Staff can also delete them, and they're deleted on request (section 6). Appeals and evidence go with their case |
+| Tickets and Analytics daily totals | The server's retention setting for each |
+| AI usage records | The bot-wide retention setting (forever unless changed, and never under 90 days so a billing cycle is always complete), or until deleted on request |
+| Your own AI key | Until you remove it, or until deleted on request |
 | Backups | The latest 7 automatic daily backups, on the developer's computer and optionally a second folder they choose. A deleted record is gone from automatic backups within 7 days. Backups made by hand are kept until the developer deletes them, and are included when we handle a deletion request |
 
 If the bot is removed from a server, that server's data isn't deleted automatically. The server owner can ask for
@@ -133,20 +140,31 @@ it to be deleted.
 - The bot token and AI keys are encrypted, and the dashboard password is stored only as a secure hash.
 - The dashboard needs a password or a Discord login, and staff only see servers they moderate.
 - Updates are only installed when they carry a valid signature.
+- The app checks its own program files against a list signed by the developer, and pauses the bot if any changed.
 
 No system is perfectly secure. If we learn that data was accessed without permission, we'll tell Discord and the
 people affected, as Discord's Developer Policy requires.
 
-## 8. Children
+## 8. If you run your own copy
+
+The Obsolescence app can be run by anyone with their own Discord bot, for example to test it.
+
+- Everything that copy collects stays on that person's computer, under their control. They decide its settings,
+  including how long records are kept, and they answer to their own server's members for it.
+- None of that copy's data is sent to us. It contacts only Discord, the AI provider and uptime service its operator
+  chose, and GitHub (for updates, repairs and the scam-domain list, as in section 4).
+- The program-file check runs on that computer and sends nothing anywhere.
+
+## 9. Children
 
 Discord requires users to be at least 13, or older where local law says so. Obsolescence isn't directed at
 children under 13 and doesn't knowingly collect their data. If you believe it has, contact us and we'll delete it.
 
-## 9. Changes
+## 10. Changes
 
 We'll update this page when the bot's data handling changes and change the effective date at the top. Significant
 changes will be announced wherever the bot is supported.
 
-## 10. Contact
+## 11. Contact
 
 **apex101legend@yahoo.com**
